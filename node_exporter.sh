@@ -1,4 +1,9 @@
 #!/bin/sh
+# https://prometheus.io/docs/guides/node-exporter/
+# https://prometheus.io/download/#node_exporter
+
+
+
 
 # Set the Node Exporter version to download
 NODE_EXPORTER_VERSION="1.5.0"
