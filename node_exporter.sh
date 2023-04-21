@@ -16,7 +16,15 @@ NODE_EXPORTER_VERSION="1.5.0"
 wget https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz
 
 # check file 
-[ -e ./node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz ] || echo  ' file not found ' ;   exit 0
+
+# check file
+if test -e ${PWD}/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz ; then
+    echo "file downloaded"
+else
+    echo "file not found"
+    exit -5;
+fi
+
 
 # Extract the binary
 tar -zxvf node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz
