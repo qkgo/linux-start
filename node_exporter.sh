@@ -58,7 +58,7 @@ sleep 1
 sudo nohup systemctl status node_exporter . & 
 sleep 1
 
-cat nohup.out
+sudo cat nohup.out
 
 # Verify if the Node Exporter is working
 sleep 5
