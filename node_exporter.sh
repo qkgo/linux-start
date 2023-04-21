@@ -1,6 +1,10 @@
 #!/bin/sh
 
 
+sudo apt-get  install wget -y || true
+
+sudo yum install wget -y || true
+
  sudo systemctl stop node_exporter || true
 
  sudo systemctl disable node_exporter || true
@@ -10,6 +14,9 @@ NODE_EXPORTER_VERSION="1.5.0"
 
 # Download the Node Exporter binary
 wget https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz
+
+# check file 
+[ -e ./node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz ] || echo  ' file not found ' ;   exit 0
 
 # Extract the binary
 tar -zxvf node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz
